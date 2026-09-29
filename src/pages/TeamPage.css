@@ -1,0 +1,604 @@
+/* ==========================================================================
+   Valdora Universe - Dedicated Team Page Styles (Separated Tiers)
+   ========================================================================== */
+
+.team-page-root {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.05) 0%, transparent 60%),
+              radial-gradient(circle at 10% 30%, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
+              #080a0f;
+  color: #e2e8f0;
+}
+
+.team-page-hero {
+  padding: 1.5rem 0 2rem;
+  max-width: 800px;
+}
+
+.team-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.team-hero-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.team-hero-subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.team-content-wrapper {
+  padding-bottom: 5rem;
+}
+
+/* ==========================================================================
+   Separated Tiers Sections
+   ========================================================================== */
+
+.team-tiers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.team-tier-section {
+  position: relative;
+}
+
+.tier-header-block {
+  margin-bottom: 1.75rem;
+}
+
+.tier-badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.tier-badge-label.gold-badge {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
+}
+
+.tier-badge-label.cyan-badge {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: #06b6d4;
+}
+
+.tier-badge-label.purple-badge {
+  background: rgba(217, 70, 239, 0.15);
+  border: 1px solid rgba(217, 70, 239, 0.4);
+  color: #d946ef;
+}
+
+.tier-headline {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.tier-subtext {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* Grids for distinct tiers */
+.team-tier-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.team-tier-grid.two-columns {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+.team-tier-grid.center-single {
+  grid-template-columns: minmax(360px, 480px);
+}
+
+/* Tier Dividers */
+.team-tier-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.4;
+  margin: 0.5rem 0;
+}
+
+.team-tier-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
+}
+
+.team-tier-divider .divider-node {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Card Frames
+   ========================================================================== */
+
+.team-card-frame {
+  position: relative;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card-frame:hover {
+  transform: translateY(-3px);
+}
+
+/* Glowing Border Themes */
+.team-card-frame.founder-theme {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.06);
+}
+
+.team-card-frame.founder-theme:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.16);
+}
+
+.team-card-frame.dev-theme {
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.06);
+}
+
+.team-card-frame.dev-theme:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 8px 30px rgba(6, 182, 212, 0.16);
+}
+
+.team-card-frame.creative-theme {
+  border-color: rgba(217, 70, 239, 0.3);
+  box-shadow: 0 4px 20px rgba(217, 70, 239, 0.06);
+}
+
+.team-card-frame.creative-theme:hover {
+  border-color: rgba(217, 70, 239, 0.6);
+  box-shadow: 0 8px 30px rgba(217, 70, 239, 0.16);
+}
+
+/* Card Corners */
+.frame-corner {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.team-card-frame.founder-theme .frame-corner {
+  border-color: #f59e0b;
+}
+
+.team-card-frame.dev-theme .frame-corner {
+  border-color: #06b6d4;
+}
+
+.team-card-frame.creative-theme .frame-corner {
+  border-color: #d946ef;
+}
+
+.corner-tl {
+  top: 6px;
+  left: 6px;
+  border-width: 2px 0 0 2px;
+}
+
+.corner-br {
+  bottom: 6px;
+  right: 6px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Card Header */
+.team-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.team-avatar-box {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.team-avatar-head {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  border-radius: 6px;
+}
+
+.team-crown-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: #f59e0b;
+  color: #020617;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.6);
+  border: 2px solid #0f172a;
+}
+
+.team-role-pill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid;
+  text-transform: uppercase;
+}
+
+/* Card Bio */
+.team-card-bio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Name & Platform Identifier */
+.team-name-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.team-ign-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.platform-pill {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.platform-pill.mc-pill {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+
+.team-member-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.team-alt-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.team-member-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+/* Discord Integration Box */
+.team-discord-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  background: rgba(88, 101, 242, 0.09);
+  border: 1px solid rgba(88, 101, 242, 0.25);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  margin-bottom: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.team-discord-box:hover {
+  background: rgba(88, 101, 242, 0.14);
+  border-color: rgba(88, 101, 242, 0.45);
+}
+
+.team-discord-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.dc-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5865F2;
+  flex-shrink: 0;
+}
+
+.discord-mini-icon {
+  color: #5865F2;
+}
+
+.dc-text-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.dc-username {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e0e7ff;
+}
+
+.dc-display {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.dc-copy-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(88, 101, 242, 0.18);
+  border: 1px solid rgba(88, 101, 242, 0.4);
+  color: #c7d2fe;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 28px;
+}
+
+.dc-copy-button:hover {
+  background: #5865F2;
+  border-color: #5865F2;
+  color: #ffffff;
+}
+
+.dc-copy-button.is-copied {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #22c55e;
+  color: #4ade80;
+}
+
+.dc-copy-button:focus-visible {
+  outline: 2px solid #5865F2;
+  outline-offset: 2px;
+}
+
+.team-desc-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+}
+
+/* Card Actions */
+.team-card-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.team-inspect-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.team-inspect-btn:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
+}
+
+.team-nonplayer-tag {
+  display: block;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  padding: 0.5rem 0;
+  font-style: italic;
+}
+
+/* Bottom Strip */
+.team-bottom-strip {
+  margin-top: 4rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(88, 101, 242, 0.25);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.bottom-strip-text strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.bottom-strip-text p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.btn-discord {
+  background: #5865F2;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-discord:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+/* Skeleton loader */
+.skeleton-team-card {
+  min-height: 220px;
+  background: rgba(15, 23, 42, 0.4);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.skeleton-avatar-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-line-title {
+  width: 50%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin: 1rem 0 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-line-desc {
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 768px) {
+  .team-tier-grid.two-columns {
+    grid-template-columns: 1fr;
+  }
+  .team-tier-grid.center-single {
+    grid-template-columns: 1fr;
+  }
+  .team-bottom-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-frame {
+    padding: 1.25rem 1rem;
+  }
+  .team-discord-box {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .dc-copy-button {
+    width: 100%;
+    min-height: 36px;
+  }
+  .team-inspect-btn {
+    min-height: 44px;
+  }
+}
+

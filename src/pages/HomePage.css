@@ -1,0 +1,131 @@
+/* ===================================================
+   VALDORA BERANDA (HOME) REALM GATEWAY STYLES
+   Anti-slop compliant: WCAG AA, No generic templates
+   =================================================== */
+
+.home-page-view {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 1. Realm Navigation Hub ("Jelajahi Dunia & Fitur Unggulan") */
+.home-pages-preview {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 0 4.5rem;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.home-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.page-preview-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent-gold)), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.page-preview-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-accent, var(--accent-gold));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.page-preview-card:hover::before {
+  opacity: 1;
+}
+
+.page-card-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--card-accent, var(--accent-gold));
+  margin-bottom: 1.25rem;
+}
+
+.page-card-kicker {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--card-accent, var(--accent-gold));
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.page-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.page-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.page-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.page-preview-card:hover .page-card-btn {
+  background: var(--card-accent, var(--accent-gold));
+  color: #0c0f14;
+  border-color: var(--card-accent, var(--accent-gold));
+}
+
+@media (max-width: 900px) {
+  .home-pages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

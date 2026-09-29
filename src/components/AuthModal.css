@@ -1,0 +1,372 @@
+/* ==========================================================================
+   AUTH MODAL (Minecraft Dark Fantasy RPG Plaque)
+   ========================================================================== */
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 8, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: authFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes authFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auth-modal-chassis {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(180deg, #15161c 0%, #0d0e14 100%);
+  border: 2px solid #5a4b2c;
+  box-shadow: 
+    0 0 0 1px #22232e,
+    0 20px 50px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(230, 168, 34, 0.15);
+  border-radius: var(--radius-sm, 4px);
+  padding: 2.25rem 2rem;
+  color: var(--color-text-main, #f0ede6);
+  animation: authScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes authScaleUp {
+  from { transform: scale(0.95) translateY(10px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Sudut Dekoratif Plakat RPG */
+.plaque-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #f7ce68;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 4px;
+  left: 4px;
+  border-top: 2px solid #f7ce68;
+  border-left: 2px solid #f7ce68;
+}
+
+.corner-tr {
+  top: 4px;
+  right: 4px;
+  border-top: 2px solid #f7ce68;
+  border-right: 2px solid #f7ce68;
+}
+
+.corner-bl {
+  bottom: 4px;
+  left: 4px;
+  border-bottom: 2px solid #f7ce68;
+  border-left: 2px solid #f7ce68;
+}
+
+.corner-br {
+  bottom: 4px;
+  right: 4px;
+  border-bottom: 2px solid #f7ce68;
+  border-right: 2px solid #f7ce68;
+}
+
+/* Header */
+.auth-modal-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-header-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f7ce68;
+  margin-bottom: 0.5rem;
+}
+
+.auth-rune {
+  color: #ffaa00;
+}
+
+.auth-modal-title {
+  font-family: var(--font-cinzel, 'Cinzel', serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.auth-modal-subtitle {
+  font-size: 0.88rem;
+  color: #a8a9b4;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.auth-modal-subtitle code {
+  background: #090a0f;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  color: #f7ce68;
+  font-family: monospace;
+  font-size: 0.85em;
+  border: 1px solid rgba(247, 206, 104, 0.2);
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 32px;
+  height: 32px;
+  background: #1c1d27;
+  border: 1px solid #4a3e26;
+  color: #a8a9b4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.auth-close-btn:hover {
+  background: #2a2c3a;
+  color: #ffffff;
+  border-color: #f7ce68;
+  transform: scale(1.05);
+}
+
+/* Alert Box */
+.auth-alert-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.auth-alert-box.error {
+  background: rgba(186, 45, 45, 0.2);
+  border: 1px solid #ba2d2d;
+  color: #ff9d9d;
+}
+
+.alert-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #d8d9e2;
+  text-transform: uppercase;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.9rem;
+  color: #7a7b88;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+.auth-input {
+  width: 100%;
+  background: #090a0f;
+  border: 1.5px solid #2f3242;
+  color: #ffffff;
+  padding: 0.75rem 0.9rem 0.75rem 2.6rem;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm, 4px);
+  outline: none;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.auth-input:focus {
+  border-color: #e6a822;
+  background: #0e1017;
+  box-shadow: 0 0 0 3px rgba(230, 168, 34, 0.2);
+}
+
+.auth-input::placeholder {
+  color: #555768;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: #7b7e90;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+/* Actions */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.auth-btn {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.btn-cancel {
+  background: #14151e;
+  border: 1.5px solid #2e3142;
+  color: #a8a9b4;
+  flex: 0 0 35%;
+}
+
+.btn-cancel:hover {
+  background: #20222f;
+  color: #ffffff;
+  border-color: #4a4d64;
+}
+
+.btn-submit {
+  background: linear-gradient(180deg, #d89617 0%, #a66f07 100%);
+  border: 1.5px solid #f7ce68;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 0 #634304,
+    0 6px 12px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: linear-gradient(180deg, #e6a822 0%, #b87b08 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 5px 0 #634304,
+    0 8px 16px rgba(230, 168, 34, 0.35);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 
+    inset 0 1px 0 rgba(0, 0, 0, 0.4),
+    0 1px 0 #634304;
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.loading-state {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.medieval-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Footer */
+.auth-modal-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #20222f;
+  text-align: center;
+}
+
+.auth-modal-footer p {
+  font-size: 0.78rem;
+  color: #8c8f9f;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.auth-modal-footer code {
+  background: #090a0f;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  color: #e6a822;
+  font-family: monospace;
+  font-size: 0.82em;
+}
+
+@media (max-width: 560px) {
+  .auth-modal-chassis {
+    padding: 1.75rem 1.25rem;
+  }
+  
+  .auth-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+    flex: none;
+  }
+}

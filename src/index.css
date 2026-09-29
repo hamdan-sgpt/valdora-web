@@ -1,0 +1,297 @@
+:root {
+  /* Color Palette (WCAG AA Compliant) */
+  --bg-base: #0c0f14;
+  --bg-surface: #131924;
+  --bg-surface-elevated: #1a2232;
+  --bg-surface-hover: #222d42;
+  --bg-translucent: rgba(19, 25, 36, 0.85);
+
+  --border-subtle: #242f42;
+  --border-strong: #33435c;
+  --border-gold: rgba(229, 169, 60, 0.4);
+
+  --accent-gold: #e5a93c;
+  --accent-gold-hover: #f5bc54;
+  --accent-gold-glow: rgba(229, 169, 60, 0.2);
+
+  --accent-amethyst: #9f75ff;
+  --accent-amethyst-glow: rgba(159, 117, 255, 0.2);
+
+  --accent-emerald: #10b981;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+
+  /* Typography */
+  --font-heading: 'Chakra Petch', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing & Gaming Sizing Tokens */
+  --container-max: 1200px;
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-badge: 4px;
+
+  /* Transitions */
+  --transition-fast: 0.12s ease;
+  --transition-normal: 0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(30, 41, 59, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(159, 117, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(229, 169, 60, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Accessibility Focus Ring (R-32 Compliance) */
+:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* Typography Presets */
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(229, 169, 60, 0.08);
+  border: 1px solid rgba(229, 169, 60, 0.3);
+  border-radius: var(--radius-xs);
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.85rem;
+}
+
+.section-tag.amethyst {
+  background: rgba(159, 117, 255, 0.08);
+  border-color: rgba(159, 117, 255, 0.3);
+  color: var(--accent-amethyst);
+}
+
+.section-desc {
+  margin-top: 0.85rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Tactile Gaming Buttons (Authentic Minecraft RPG feel, zero AI slop) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-height: 44px; /* R-03 Tap target minimum */
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #f5c468 0%, #d89626 100%);
+  color: #0c0f14;
+  border: 1px solid #ffdf94;
+  border-bottom: 3px solid #94600e;
+  box-shadow: 0 4px 15px rgba(229, 169, 60, 0.35);
+  font-weight: 800;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ffd37e 0%, #e6a22f 100%);
+  box-shadow: 0 6px 22px rgba(229, 169, 60, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, #1e2738 0%, #131924 100%);
+  color: #f3f4f6;
+  border: 1px solid #33435c;
+  border-bottom: 3px solid #0b0f16;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #27344a 0%, #18202d 100%);
+  border-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+.btn-discord {
+  background: linear-gradient(180deg, #3d46a8 0%, #29307d 100%);
+  color: #ffffff;
+  border: 1px solid #5865F2;
+  border-bottom: 3px solid #1c2152;
+  box-shadow: 0 4px 14px rgba(88, 101, 242, 0.3);
+}
+
+.btn-discord:hover {
+  background: linear-gradient(180deg, #4954bd 0%, #323b9c 100%);
+  border-color: #828dfa;
+  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-discord:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+/* Status Indicator Dot */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-emerald);
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-emerald);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}

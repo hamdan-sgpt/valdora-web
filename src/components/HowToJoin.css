@@ -1,0 +1,379 @@
+/* ===================================================
+   VALDORA JOIN SECTION & CONNECTION CONSOLE
+   Anti-slop compliant: Bespoke RPG styling, No template 3-step circles
+   =================================================== */
+
+.join-section {
+  position: relative;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 1. Dual-Pane Connection Console */
+.connection-console-chassis {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3.5rem;
+}
+
+.console-header-tabs {
+  display: flex;
+  background: rgba(12, 15, 20, 0.8);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.console-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.console-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+}
+
+.console-tab-btn.active {
+  background: var(--bg-surface-elevated);
+  border-bottom-color: var(--accent-gold);
+  color: var(--text-main);
+}
+
+.tab-icon {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-main-label {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.tab-sub-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.console-tab-btn.active .tab-main-label {
+  color: var(--accent-gold);
+}
+
+.console-body-panel {
+  padding: 2rem;
+}
+
+.connection-card-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.conn-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.conn-badge-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.conn-status-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-badge);
+}
+
+.conn-status-pill.online {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.conn-meta-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-badge);
+  color: var(--text-muted);
+}
+
+.conn-subtext {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* Address Plaque */
+.conn-address-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(12, 15, 20, 0.9);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  transition: border-color var(--transition-fast);
+}
+
+.conn-address-box:hover {
+  border-color: var(--border-gold);
+}
+
+.address-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.address-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+
+.address-code {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.conn-copy-btn {
+  flex-shrink: 0;
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.btn-copied {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.bedrock-address-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.split-box {
+  padding: 0.85rem 1rem;
+}
+
+.split-box .address-code {
+  font-size: 1rem;
+}
+
+.client-tips-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.tip-dot {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* 2. Survival Field Manual Grid */
+.manual-section-wrapper {
+  background: rgba(12, 15, 20, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+}
+
+.manual-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.manual-emblem {
+  font-size: 2rem;
+}
+
+.manual-heading {
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.manual-lead {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.protocol-quad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.protocol-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.protocol-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+
+.protocol-card.highlight-gold {
+  border-color: var(--border-gold);
+  background: linear-gradient(180deg, rgba(229, 169, 60, 0.04) 0%, var(--bg-surface-elevated) 100%);
+}
+
+.protocol-card.alert-card {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.04) 0%, var(--bg-surface-elevated) 100%);
+}
+
+.protocol-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.protocol-code-chip {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-badge);
+  color: var(--text-muted);
+}
+
+.protocol-code-chip.gold {
+  background: rgba(229, 169, 60, 0.15);
+  color: var(--accent-gold);
+}
+
+.protocol-code-chip.red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.protocol-icon {
+  font-size: 1.1rem;
+}
+
+.protocol-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.protocol-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.code-pill-display {
+  background: rgba(12, 15, 20, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.45rem 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.code-pill-display code {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  word-break: break-all;
+}
+
+.code-pill-display.danger code {
+  color: #f87171;
+}
+
+.protocol-note {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+.protocol-note code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  color: var(--text-main);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .console-header-tabs {
+    flex-direction: column;
+  }
+  
+  .bedrock-address-split {
+    grid-template-columns: 1fr;
+  }
+
+  .manual-section-wrapper {
+    padding: 1.5rem;
+  }
+
+  .manual-banner-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
